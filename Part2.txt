@@ -1,0 +1,30 @@
+package Pack2;
+
+import java.util.Arrays;
+
+public class T2d extends Thread{
+	private static int lval;
+	private static int loc;
+	public T2d(int lval) {
+		this.lval = lval;
+	}
+	public static int loc() {
+		loc++;
+		return loc;
+	}
+	@Override
+	public void run() {
+		int id = (int) getId();
+		tr(lval,id);
+		super.run();
+	}
+	public static void tr(int lv,int i) {
+		int p=0;
+		while(p<lv) {
+			int tots = (int)(Math.random()*30);
+			p+=tots;
+			System.out.println("id: "+i+" saltou cera de "+tots+"m "+" percorreu: "+p+"m");
+		}
+		System.out.println("id:"+i+" lugar: "+loc()+"º");
+	}
+}

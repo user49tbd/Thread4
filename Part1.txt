@@ -1,0 +1,14 @@
+package Pack1;
+import java.util.ArrayList;
+
+import Pack2.T2d;
+public class T1d {
+	public static void main(String[]args) {
+		ArrayList <Double> da = new ArrayList<>();
+		for(int c=0;c<5;c++) {
+			Thread tid = new T2d(120);
+			tid.start();
+		}
+		
+	}
+}
